@@ -1,0 +1,16 @@
+﻿@page "/fetchdata"
+@inject HttpClient Http
+
+
+<div>
+    @count
+</div>
+<Counter OnClickCallback="@Pluss"/>
+@code {
+    private int count = 0;
+    private void Pluss()
+    {
+        count++;
+    }
+
+}
