@@ -1,0 +1,38 @@
+﻿@using Var6.Data;
+@page "/fetchdata"
+
+<h1>Weather forecast</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+@if (users == null)
+{
+    <p><em>Loading...</em></p>
+}
+<table id="Tab" class="table">
+    <thead>
+        <tr>
+            <th>@titles[0]</th>
+            <th>@titles[1]</th>
+            <th>@titles[2]</th>
+            <th>@titles[3]</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in users)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Surname</td>
+                <td>@item.DateOfAdding</td>
+                <td><button @onclick="@(e => users.Remove(item))">Удалить</button></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+@code {
+    public List<string> titles = User.titles;
+    public static List<User> users = User.users;
+    }

@@ -1,0 +1,26 @@
+﻿@using Var6.Data;
+@page "/counter"
+
+Name
+<br />
+<input type="text" id="NameUS" @bind="@name" />
+<br />
+<br />
+Surname
+<br />
+<input type="text" id="SurnameUs" @bind="@surname" />
+<br />
+<br />
+<button @onclick="Add">Добавить</button>
+
+@code {
+    public static List<User> users = User.users;
+    string name;
+    string surname;
+    public void Add(MouseEventArgs e)
+    {
+            users.Add(new User(name, surname, DateTime.Now));
+
+            Console.WriteLine("Нажато");
+    }
+}
