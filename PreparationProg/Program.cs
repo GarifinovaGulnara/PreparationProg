@@ -1,5 +1,7 @@
 ﻿using PreparationProg.Weapons;
 using System;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace PreparationProg
 {
@@ -7,9 +9,6 @@ namespace PreparationProg
     {
         static void Main(string[] args)
         {
-            Weapon han = new Handgun(300, 9, "type", "name)");
-            han.GetInfo();
-
         }
     }
 }

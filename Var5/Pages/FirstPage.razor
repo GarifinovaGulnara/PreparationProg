@@ -1,0 +1,56 @@
+﻿@using Var5.Data;
+@page "/var5"
+<h3>FirstPage</h3>
+
+@if (users == null)
+{
+    <p><em>Loading...</em></p>
+}
+    <table id="Tab" class="table">
+        <thead>
+            <tr>
+                <th>@titles[0]</th>
+                <th>@titles[1]</th>
+                <th>@titles[2]</th>
+                <th>@titles[3]</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in users)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Surname</td>
+                    <td>@item.DateOfAdding</td>
+                    <td><button @onclick="@(e => users.Remove(item))">Удалить</button></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+Name
+<br />
+<input type="text" id="NameUS" @bind="@name" />
+<br />
+<br />
+Surname
+<br />
+<input type="text" id="SurnameUs" @bind="@surname" />
+<br />
+<br />
+<button @onclick="Add">Добавить</button>
+@code {
+    public List<string> titles = User.titles;
+    public static List<User> users = new List<User>();
+    string name;
+    string surname;
+    public void Add(MouseEventArgs e)
+    {
+        if(e.Button == 0)
+        {
+            users.Add(new User(name, surname, DateTime.Now));
+
+            Console.WriteLine("Нажато");
+        }
+    }
+}

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PreparationProg.Weapons
+namespace PreparationProg.Var3
 {
-    public class Handgun : Weapon
+    public class Handgun : Weapon3
     {
         public string Name { get; set; }
         public Handgun(int damage, int capacity, string ammunitionType, string name) : base(damage, capacity, ammunitionType)

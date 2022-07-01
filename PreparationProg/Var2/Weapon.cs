@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace PreparationProg.Weapons
 {
-    public class Weapon
+    public class Weapon3
     {
-        public Weapon(int damage, int capacity, string ammunitionType)
+        public Weapon3(int damage, int capacity, string ammunitionType)
         {
             Damage = damage;
             Capacity = capacity;
@@ -20,7 +20,7 @@ namespace PreparationProg.Weapons
         public string AmmunitionType { get; set; }
         public int DealingDamage()
         {
-            Random rnd = new Random();
+            Random rnd = new();
             return rnd.Next(1, Damage);
         }
         public virtual void GetInfo()
