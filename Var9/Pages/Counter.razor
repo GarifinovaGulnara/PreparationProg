@@ -1,0 +1,10 @@
+﻿@page "/counter"
+@using Var9.Service
+@inject ITextService TextService
+
+<input value="введите текст" @onchange="@(e => TextService.SaveText(e.Value.ToString()))"/>
+<div >"@TextService.GetText()"</div>
+
+@code {
+   
+}
