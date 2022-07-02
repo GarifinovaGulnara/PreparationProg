@@ -23,9 +23,5 @@ namespace PreparationProg.Weapons
             Random rnd = new();
             return rnd.Next(1, Damage);
         }
-        public virtual void GetInfo()
-        {
-            Console.WriteLine(Capacity + " " + AmmunitionType);
-        }
     }
 }

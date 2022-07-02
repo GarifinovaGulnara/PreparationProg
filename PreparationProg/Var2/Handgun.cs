@@ -14,9 +14,10 @@ namespace PreparationProg.Weapons
             Name = name;
         }
 
-        public override void GetInfo()
+        public int DealingDemage()
         {
-            Console.WriteLine($"{Damage}, {Capacity}, {AmmunitionType}, {Name}");
+            Random rnd = new Random();
+            return rnd.Next(1, Damage);
         }
     }
 }

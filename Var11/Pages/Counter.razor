@@ -1,0 +1,32 @@
+﻿@using Var11.Data;
+@page "/counter"
+
+<h5>Var11</h5>
+
+Имя
+<br />
+<input type="text" @bind="@name"/>
+<br />
+<br />
+Логин
+<br />
+<input type="text" @bind="@login"/>
+<br />
+<br />
+Почта
+<br />
+<input type="text" @bind="@email"/>
+<br />
+<br />
+
+<button class="btn btn-primary" @onclick="Add">Добавить</button>
+
+@code {
+    string name;
+    string login;
+    string email;
+    public void Add()
+    {
+        User.SaveUser(name, login, email);
+    }
+}
